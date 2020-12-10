@@ -5,7 +5,7 @@ import Auth from 'routes/Auth';
 import Profile from 'routes/Profile';
 import Navigation from 'components/Navigation';
 
-const AppRouter = ({isLoggedIn}) => {
+const AppRouter = ({isLoggedIn, userObj}) => {
 
   return (
     <Router>
@@ -14,7 +14,7 @@ const AppRouter = ({isLoggedIn}) => {
         {isLoggedIn ? 
         <>
         <Route exact path="/">
-          <Home></Home>
+          <Home userObj={userObj}></Home>
         </Route> 
         <Route exact path="/profile">
           <Profile></Profile>
